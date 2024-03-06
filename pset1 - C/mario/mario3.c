@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <cs50.h>
- 
+
 // Função get_altura
 int get_height_int(void)
 {
@@ -24,11 +24,25 @@ int main(void)
 {
     int height = get_height_int();
     for (int i = 1; i <= height; i++) {
+        // Imprime os pontos do lado esquerdo
         print_dots(height - i);
 
         for (int j = 0; j < i; j++) {
+            // Imprime os hashes do lado esquerdo
             printf("#");
         }
+
+        // Espaço entre as duas colunas de hashes
+        printf("  ");
+
+        for (int j = 0; j < i; j++) {
+            // Imprime os hashes do lado direito
+            printf("#");
+        }
+
+        // Imprime os pontos do lado direito
+        print_dots(height - i);
+
         //Gera uma nova linha após cada iteração
         printf("\n");
     }
